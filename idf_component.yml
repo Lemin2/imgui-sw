@@ -14,4 +14,3 @@ dependencies:
   # Dear ImGui core sources as a dependency (managed component via git)
   imgui-core:
     git: https://github.com/Lemin2/imgui-core.git
-    version: ">=0.0.0"
