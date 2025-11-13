@@ -10,6 +10,7 @@ maintainers:
 
 dependencies:
   idf: ">=5.0"
-  # Provide Dear ImGui from your application as another component.
-  # Example (if you have an ImGui component available):
-  # imgui: "*"
+  # Dear ImGui core sources as a dependency (managed component via git)
+  imgui-core:
+    git: https://github.com/Lemin2/imgui-core.git
+    version: "*"

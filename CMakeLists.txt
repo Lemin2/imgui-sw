@@ -16,7 +16,7 @@ endif()
 idf_component_register(
 	SRCS "sw_imgui.cpp"
 	INCLUDE_DIRS "."  # export this component's public headers
-	# REQUIRES  # add other IDF components you depend on (if any)
+	REQUIRES imgui-core     # depends on Dear ImGui core (provided by imgui-core component)
 )
 
 # Use at least C++11 (IDF default is C++17 in recent versions; this keeps compatibility)
