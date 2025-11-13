@@ -1,0 +1,17 @@
+menu "imgui-sw configuration"
+
+config IMGUISW_ENABLE_DIRTY_RECTS
+    bool "Enable dirty-rects calculation (optimizes display updates)"
+    default y
+    help
+        When enabled, the renderer tracks the union of clip rectangles per draw call
+        and exposes them via callbacks to update only changed regions on the display.
+
+config IMGUISW_AUTO_FLUSH
+    bool "Automatically call flush callback after RenderDrawData()"
+    default y
+    help
+        If a flush callback is set, call it automatically at the end of RenderDrawData().
+        Disable to call ImGuiSW::Present() manually from your app.
+
+endmenu

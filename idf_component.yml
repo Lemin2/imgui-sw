@@ -1,0 +1,15 @@
+# ESP-IDF Managed Component Manifest
+# Allows using this library via `idf.py add-dependency` or as a Git submodule.
+
+version: "0.1.0"
+description: "Dear ImGui software (CPU) renderer as an ESP-IDF component; renders ImGui draw data into a user-provided framebuffer."
+license: MIT
+url: ""
+maintainers:
+  - ""
+
+dependencies:
+  idf: ">=5.0"
+  # Provide Dear ImGui from your application as another component.
+  # Example (if you have an ImGui component available):
+  # imgui: "*"
