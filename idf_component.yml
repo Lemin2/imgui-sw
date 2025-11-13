@@ -6,11 +6,7 @@ version: "0.1.0"
 description: "Dear ImGui software (CPU) renderer as an ESP-IDF component; renders ImGui draw data into a user-provided framebuffer."
 license: MIT
 url: "https://github.com/Lemin2/sw_imgui"
-maintainers:
-  - "Lemin2"
-tags:
-  - imgui
-  - gui
+
 
 dependencies:
   idf: ">=5.0"
