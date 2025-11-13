@@ -196,12 +196,19 @@ bool Init(int width, int height, void* pixels, int pitch_bytes, PixelFormat fmt)
 
 void Shutdown()
 {
-    if (!G) return; G->UserTextures.clear(); delete G; G = nullptr;
+    if (!G) return;
+    G->UserTextures.clear();
+    delete G;
+    G = nullptr;
 }
 
 void NewFrame(int width, int height, void* pixels, int pitch_bytes)
 {
-    if (!G) return; G->Width = width; G->Height = height; G->Pixels = (uint8_t*)pixels; G->Pitch = pitch_bytes;
+    if (!G) return;
+    G->Width = width;
+    G->Height = height;
+    G->Pixels = (uint8_t*)pixels;
+    G->Pitch = pitch_bytes;
 }
 
 void RenderDrawData(ImDrawData* draw_data)
@@ -234,7 +241,8 @@ void RenderDrawData(ImDrawData* draw_data)
             cr.y = (pcmd->ClipRect.y - clip_off.y) * clip_scale.y;
             cr.z = (pcmd->ClipRect.z - clip_off.x) * clip_scale.x;
             cr.w = (pcmd->ClipRect.w - clip_off.y) * clip_scale.y;
-            if (cr.x < 0) cr.x = 0; if (cr.y < 0) cr.y = 0;
+            if (cr.x < 0) cr.x = 0;
+            if (cr.y < 0) cr.y = 0;
             if (cr.z > fb_width)  cr.z = (float)fb_width;
             if (cr.w > fb_height) cr.w = (float)fb_height;
             if (cr.x >= cr.z || cr.y >= cr.w) continue;
@@ -348,7 +356,8 @@ ImTextureID CreateTexture(const void* pixels, int w, int h, int bpp)
 
 void DestroyAllUserTextures()
 {
-    if (!G) return; G->UserTextures.clear();
+    if (!G) return;
+    G->UserTextures.clear();
 }
 
 #if IMGUISW_ENABLE_DIRTY_RECTS
@@ -362,7 +371,8 @@ void SetFlushCallback(FlushRectCallback cb, void* user_data, const DirtyRectsCon
 
 void SetAutoFlush(bool enabled)
 {
-    if (!G) return; G->AutoFlush = enabled;
+    if (!G) return;
+    G->AutoFlush = enabled;
 }
 
 void Present()
@@ -393,7 +403,8 @@ void ComputeDirtyRects(ImDrawData* dd, ImVector<Rect>& out,
             r.y1 = std::max(0, std::min(r.y1, screen_h));
             r.x2 = std::max(0, std::min(r.x2, screen_w));
             r.y2 = std::max(0, std::min(r.y2, screen_h));
-            if (r.x2 <= r.x1 || r.y2 <= r.y1) continue; out.push_back(r);
+            if (r.x2 <= r.x1 || r.y2 <= r.y1) continue;
+            out.push_back(r);
         }
     }
     if (out.Size == 0) return;
