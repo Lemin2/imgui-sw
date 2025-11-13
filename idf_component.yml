@@ -1,16 +1,17 @@
 # ESP-IDF Managed Component Manifest
 # Allows using this library via `idf.py add-dependency` or as a Git submodule.
 
+name: imgui-sw
 version: "0.1.0"
 description: "Dear ImGui software (CPU) renderer as an ESP-IDF component; renders ImGui draw data into a user-provided framebuffer."
 license: MIT
-url: ""
+url: "https://github.com/Lemin2/sw_imgui"
 maintainers:
-  - ""
+  - "Lemin2"
 
 dependencies:
   idf: ">=5.0"
   # Dear ImGui core sources as a dependency (managed component via git)
   imgui-core:
     git: https://github.com/Lemin2/imgui-core.git
-    version: "*"
+    version: ">=0.0.0"
